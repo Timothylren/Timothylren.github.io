@@ -1,6 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Rock+Salt&display=swap');
+
+body {
+    padding-left: 4em;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Arvo',serif;
+    background: linear-gradient(-45deg, #ede4ff, #dae3ff, #dbf4fd, #cdfaef);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-right: 1em;
+    max-width: 50em;
+}
+
+p {
+    max-width: 50em;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "head"
+                         "nav"
+                         "main"
+                         "foot";
+    grid-template-rows: auto auto 1fr auto;
+}
+
+nohead{
+    display:none;
+}
+
+
+
+@media screen and (min-width: 25em){
+    body{
+        display: grid;
+        grid-template-areas: "nohead head"
+                             "nav main"
+                             "notfoot foot";
+        grid-template-columns: 1fr 6fr;
+        grid-template-rows: auto 1fr auto;
+    }
+    body > *{
+        padding-left: 4rem;
+    }
+    nohead{
+        background-color:rgba(255, 255, 255, 0.5);
+        display:flex;
+    }
+}
+
+#iconPic {
+    height: 100px;
+}
+
+body > header{
+    background-color: rgba(218, 227, 255, 0.5);
+    max-width: 50em;
+    grid-area: head;
+    font-family: 'Rock Salt', cursive;
+    padding-top:0.67em;
+    padding-bottom: 0.67em;
+}
+
+body > nav{
+    background-color: rgba(255, 255, 255, 0.5);
+    grid-area: nav;
+}
+
+body > main{
+    grid-area: main;
+}
+
+body > footer{
+    grid-area: foot;
+    padding-top: 0.67em;
+    padding-bottom: 0.67em;
+}
+
+
+
+nav > ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+main > h1{
+    margin-top:0;
+}
+
+a{
+    color: black;
+    text-decoration-color: #405bd3;
+}
+a:hover{
+    color: #405bd3;
+}
+
+#avatarPic
+{
+    height: 15em;
+}
+
+
 #skillsList
 {
     columns: 3;
     -webkit-columns: 3;
     -moz-columns: 3;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
